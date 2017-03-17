@@ -2,10 +2,12 @@ class Event {
 
   private int mAttendees;
   private int mFoodMultiplier;
+  private int mBeverageCost;
 
-  public Event(int attendees, int foodMultiplier) {
+  public Event(int attendees, int foodMultiplier, int beverageCost) {
     mAttendees = attendees;
     mFoodMultiplier = foodMultiplier;
+    mBeverageCost = beverageCost;
   }
 
   public int getAttendees() {
@@ -13,7 +15,7 @@ class Event {
   }
 
   public int calculatePrice() {
-    int price = mAttendees * 5 * mFoodMultiplier;
+    int price = mAttendees * (5 + mBeverageCost) * mFoodMultiplier;
     return price;
   }
 }
