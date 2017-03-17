@@ -98,5 +98,9 @@ public class App {
     System.out.println("___________________________________");
     System.out.println("You choose " + entertainmentChoice + " as your entertainment option.");
     System.out.println("___________________________________");
+
+    Event newEvent = new Event(attendees, foodMultiplier, beverageCost, entertainmentCost);
+    int totalPrice = newEvent.calculatePrice();
+    System.out.println("This event sounds amazing! And it's only going to cost you " + totalPrice + " !");
   }
 }
