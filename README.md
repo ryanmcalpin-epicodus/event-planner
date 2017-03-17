@@ -34,7 +34,7 @@ Download or clone directory. Move to the directory in the command line. Then mov
   * Input: 100 guest, with band (+300)
   * Output: 800
 
-#### Applying a coupon alters the total. (Coupon codes: "fiftyfree")
+#### Applying a coupon alters the total. (Coupon codes: "fiftyfree", "freedrinks")
   * Input: 100 guest, with coupon (-50)
   * Output: 450
 

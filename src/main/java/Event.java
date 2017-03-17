@@ -25,6 +25,11 @@ class Event {
     int newPrice = 0;
     if (couponCodeString.equals("fiftyfree") && originalPrice >= 50) {
       newPrice = originalPrice - 50;
+    } else if (couponCodeString.equals("freedrinks")) {
+      mBeverageCost = 0;
+      newPrice = calculatePrice();
+    } else {
+      newPrice = originalPrice;
     }
     return newPrice;
   }
