@@ -101,6 +101,28 @@ public class App {
 
     Event newEvent = new Event(attendees, foodMultiplier, beverageCost, entertainmentCost);
     int totalPrice = newEvent.calculatePrice();
-    System.out.println("This event sounds amazing! And it's only going to cost you " + totalPrice + " !");
+    System.out.println("This event sounds amazing! And it's only going to cost you $" + totalPrice + "!");
+
+    System.out.println("Do you have a coupon you would like to use?");
+    String couponChoice = "";
+    int newTotal = 0;
+    while (newTotal == 0) {
+      couponChoice = myScanner.nextLine().toUpperCase();
+      if (couponChoice.equals("YES") || couponChoice.equals("Y")) {
+        System.out.println("Okay, what is the code?");
+        String couponCode = myScanner.nextLine();
+        newTotal = newEvent.applyCoupon(totalPrice, couponCode);  
+        if (newTotal == 0) {
+          System.out.println("I'm sorry, that's not a valid coupon code. Would you like to try again?");
+        } else {
+          System.out.println("Your new total is " + newTotal + ". Wow! What a savings. See you at the event!");
+        }
+      } else if (couponChoice.equals("NO") || couponChoice.equals("N")) {
+        System.out.println("Okay, see you at the event!");
+        newTotal = totalPrice;
+      } else {
+        System.out.println("Invalid option. Enter 'yes' or 'y' for yes, and 'no' or 'n' for no.");
+      }
+    }
   }
 }
