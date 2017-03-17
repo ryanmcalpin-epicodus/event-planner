@@ -20,4 +20,12 @@ class Event {
     int price = mAttendees * (5 + mBeverageCost) * mFoodMultiplier + mEntertainmentCost;
     return price;
   }
+
+  public int applyCoupon(int originalPrice, String couponCodeString) {
+    int newPrice = 0;
+    if (couponCodeString.equals("fiftyfree") && originalPrice >= 50) {
+      newPrice = originalPrice - 50;
+    }
+    return newPrice;
+  }
 }
