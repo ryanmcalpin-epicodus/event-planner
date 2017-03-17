@@ -25,13 +25,14 @@ public class App {
     }
     System.out.println("-----------------------------------------");
     System.out.println("You're event will have " + newEvent.getAttendees() + " guests.");
+    System.out.println("Your current total is " + newEvent.calculatePrice() + ".");
     System.out.println("-----------------------------------------");
 
     System.out.println("What kind of food shall we provide?");
     String foodChoice = "";
     newEvent.setFoodMultiplier(0);
     while (newEvent.getFoodMultiplier() == 0) {
-      System.out.println("SNACKS ($5/head), MEALS ($10/head), FANCY SNACKS ($15/head), or FANCY MEALS ($20/head)");
+      System.out.println("SNACKS (free!), MEALS ($5/head), FANCY SNACKS ($10/head), or FANCY MEALS ($15/head)");
       foodChoice = myScanner.nextLine().toUpperCase();
       if (foodChoice.equals("SNACKS")) {
         newEvent.setFoodMultiplier(1);
@@ -47,6 +48,7 @@ public class App {
     }
     System.out.println("-----------------------------------------");
     System.out.println("You choose " + foodChoice + " as your food option.");
+    System.out.println("Your current total is " + newEvent.calculatePrice() + ".");
     System.out.println("-----------------------------------------");
 
     System.out.println("What about tasty beverages?");
@@ -69,6 +71,7 @@ public class App {
     }
     System.out.println("-----------------------------------------");
     System.out.println("You choose " + beverageChoice + " as your beverage option.");
+    System.out.println("Your current total is " + newEvent.calculatePrice() + ".");
     System.out.println("-----------------------------------------");
 
 
@@ -92,10 +95,9 @@ public class App {
     }
     System.out.println("-----------------------------------------");
     System.out.println("You choose " + entertainmentChoice + " as your entertainment option.");
-    System.out.println("-----------------------------------------");
-
     int totalPrice = newEvent.calculatePrice();
     System.out.println("This event sounds amazing! And it's only going to cost you $" + totalPrice + "!");
+    System.out.println("-----------------------------------------");
 
     System.out.println("Do you have a coupon you would like to use?");
     String couponChoice = "";
