@@ -26,13 +26,11 @@ public class App {
         System.out.println("That's not an number! Try again.");
       }
     }
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
     System.out.println("You're event will have " + attendees + " guests.");
-    System.out.println("___________________________________");
-
+    System.out.println("-----------------------------------------");
 
     System.out.println("What kind of food shall we provide?");
-
     String foodChoice = "";
     while (foodMultiplier == 0) {
       System.out.println("SNACKS ($5/head), MEALS ($10/head), FANCY SNACKS ($15/head), or FANCY MEALS ($20/head)");
@@ -49,13 +47,11 @@ public class App {
         System.out.println("Invalid option. You must choose a valid food option.");
       }
     }
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
     System.out.println("You choose " + foodChoice + " as your food option.");
-    System.out.println("___________________________________");
-
+    System.out.println("-----------------------------------------");
 
     System.out.println("What about tasty beverages?");
-
     String beverageChoice = "";
     while (beverageCost == -1) {
       System.out.println("SODA ($1/head), BEER AND WINE ($4/head), FULL BAR ($7/head), WATER (free!), or NONE");
@@ -72,13 +68,12 @@ public class App {
         System.out.println("Invalid option. You must choose a valid beverage option.");
       }
     }
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
     System.out.println("You choose " + beverageChoice + " as your beverage option.");
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
 
 
     System.out.println("Finally, what type of entertainment would you like at your event?");
-
     String entertainmentChoice = "";
     while (entertainmentCost == -1) {
       System.out.println("POP STAR ($30,000), INDIE BAND ($2000), DJ ($500), KARAOKE ($60), or NONE");
@@ -95,9 +90,9 @@ public class App {
         entertainmentCost = 0;
       }
     }
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
     System.out.println("You choose " + entertainmentChoice + " as your entertainment option.");
-    System.out.println("___________________________________");
+    System.out.println("-----------------------------------------");
 
     Event newEvent = new Event(attendees, foodMultiplier, beverageCost, entertainmentCost);
     int totalPrice = newEvent.calculatePrice();
@@ -111,7 +106,7 @@ public class App {
       if (couponChoice.equals("YES") || couponChoice.equals("Y")) {
         System.out.println("Okay, what is the code?");
         String couponCode = myScanner.nextLine();
-        newTotal = newEvent.applyCoupon(totalPrice, couponCode);  
+        newTotal = newEvent.applyCoupon(totalPrice, couponCode);
         if (newTotal == 0) {
           System.out.println("I'm sorry, that's not a valid coupon code. Would you like to try again?");
         } else {
