@@ -16,6 +16,34 @@ class Event {
     return mAttendees;
   }
 
+  public void setAttendees(int attendees) {
+    this.mAttendees = attendees;
+  }
+
+  public int getFoodMultiplier() {
+    return mFoodMultiplier;
+  }
+
+  public void setFoodMultiplier(int foodMultiplier) {
+    this.mFoodMultiplier = foodMultiplier;
+  }
+
+  public int getBeverageCost() {
+    return mBeverageCost;
+  }
+
+  public void setBeverageCost(int beverageCost) {
+    this.mBeverageCost = beverageCost;
+  }
+
+  public int getEntertainmentCost() {
+    return mEntertainmentCost;
+  }
+
+  public void setEntertainmentCost(int entertainmentCost) {
+    this.mEntertainmentCost = entertainmentCost;
+  }
+
   public int calculatePrice() {
     int price = mAttendees * (5 + mBeverageCost) * mFoodMultiplier + mEntertainmentCost;
     return price;
