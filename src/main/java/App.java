@@ -6,6 +6,7 @@ public class App {
 
     int attendees = 0;
     int foodMultiplier = 0;
+    int beverageCost = -1;
 
     System.out.println("Welcome to the Event Planner.");
     System.out.println("How many people are attending your event?");
@@ -24,15 +25,17 @@ public class App {
         System.out.println("That's not an number! Try again.");
       }
     }
-
+    System.out.println("___________________________________");
     System.out.println("You're event will have " + attendees + " guests.");
+    System.out.println("___________________________________");
+    
 
+    System.out.println("What kind of food shall we provide?");
 
-    System.out.println("What kind of food shall we provide? Snacks ($5/head), Meals ($10/head), Fancy Snacks ($15/head), or Fancy Meals ($20/head)?");
-
-
+    String foodChoice = "";
     while (foodMultiplier == 0) {
-      String foodChoice = myScanner.nextLine().toUpperCase();
+      System.out.println("SNACKS ($5/head), MEALS ($10/head), FANCY SNACKS ($15/head), or FANCY MEALS ($20/head)");
+      foodChoice = myScanner.nextLine().toUpperCase();
       if (foodChoice.equals("SNACKS")) {
         foodMultiplier = 1;
       } else if (foodChoice.equals("MEALS")) {
@@ -45,6 +48,33 @@ public class App {
         System.out.println("Invalid option. You must choose a valid food option.");
       }
     }
-    System.out.println(foodMultiplier);
+    System.out.println("___________________________________");
+    System.out.println("You choose " + foodChoice + " as your food option.");
+    System.out.println("___________________________________");
+
+
+    System.out.println("What about tasty beverages?");
+
+    String beverageChoice = "";
+    while (beverageCost == -1) {
+      System.out.println("SODA ($1/head),BEER AND WINE ($4/head), FULL BAR ($7/head), WATER (free!), or NONE");
+      beverageChoice = myScanner.nextLine().toUpperCase();
+      if (beverageChoice.equals("SODA")) {
+        beverageCost = 1;
+      } else if (beverageChoice.equals("BEER AND WINE")) {
+        beverageCost = 4;
+      } else if (beverageChoice.equals("FULL BAR")) {
+        beverageCost = 7;
+      } else if (beverageChoice.equals("WATER") || beverageChoice.equals("NONE")) {
+        beverageCost = 0;
+      } else {
+        System.out.println("Invalid option. You must choose a valid beverage option.");
+      }
+    }
+    System.out.println("___________________________________");
+    System.out.println("You choose " + beverageChoice + " as your beverage option.");
+    System.out.println("___________________________________");
+
+
   }
 }
