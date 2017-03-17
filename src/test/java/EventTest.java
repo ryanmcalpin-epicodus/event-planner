@@ -5,25 +5,31 @@ public class EventTest {
 
   @Test
   public void getAttendees_addsNumberOfGuests_100() {
-    Event testEvent = new Event(100, 1, 0);
+    Event testEvent = new Event(100, 1, 0, 0);
     assertEquals(100, testEvent.getAttendees());
   }
 
   @Test
   public void calculatePrice_addsNumberOfGuestsPrice_500() {
-    Event testEvent = new Event(100, 1, 0);
+    Event testEvent = new Event(100, 1, 0, 0);
     assertEquals(500, testEvent.calculatePrice());
   }
 
   @Test
   public void calculatePrice_addsFoodMultiplier_1500() {
-    Event testEvent = new Event(100, 3, 0);
+    Event testEvent = new Event(100, 3, 0, 0);
     assertEquals(1500, testEvent.calculatePrice());
   }
 
   @Test
   public void calculatePrice_addsBeverageCost_700() {
-    Event testEvent = new Event(100, 1, 2);
+    Event testEvent = new Event(100, 1, 2, 0);
     assertEquals(700, testEvent.calculatePrice());
+  }
+
+  @Test
+  public void calculatePrice_addsEntertainmentCost_800() {
+    Event testEvent = new Event(100, 1, 0, 300);
+    assertEquals(800, testEvent.calculatePrice());
   }
 }
