@@ -7,7 +7,7 @@ Projoct for Epicodus, demonstrating proficiency in Java, junit testing, gradle, 
 This is the first Friday solo project for Epicodus's Java course. In the command line, users can choose options for an event. The program will calculate and return the total price.
 
 ## Setup
-Download or clone directory. Move to the directory in the command line and run 'gradle runjava'. Then move to build/classes/main and run 'java App'.
+Download or clone directory. Move to the directory in the command line. Then move to build/classes/main and run 'java App'.
 
 ## Technologies Used
  * Java
@@ -34,7 +34,7 @@ Download or clone directory. Move to the directory in the command line and run '
   * Input: 100 guest, with band (+300)
   * Output: 800
 
-#### Applying a coupon alters the total.
+#### Applying a coupon alters the total. (Coupon codes: "fiftyfree")
   * Input: 100 guest, with coupon (-50)
   * Output: 450
 
