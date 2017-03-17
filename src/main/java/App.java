@@ -7,6 +7,7 @@ public class App {
     int attendees = 0;
     int foodMultiplier = 0;
     int beverageCost = -1;
+    int entertainmentCost = -1;
 
     System.out.println("Welcome to the Event Planner.");
     System.out.println("How many people are attending your event?");
@@ -28,7 +29,7 @@ public class App {
     System.out.println("___________________________________");
     System.out.println("You're event will have " + attendees + " guests.");
     System.out.println("___________________________________");
-    
+
 
     System.out.println("What kind of food shall we provide?");
 
@@ -57,7 +58,7 @@ public class App {
 
     String beverageChoice = "";
     while (beverageCost == -1) {
-      System.out.println("SODA ($1/head),BEER AND WINE ($4/head), FULL BAR ($7/head), WATER (free!), or NONE");
+      System.out.println("SODA ($1/head), BEER AND WINE ($4/head), FULL BAR ($7/head), WATER (free!), or NONE");
       beverageChoice = myScanner.nextLine().toUpperCase();
       if (beverageChoice.equals("SODA")) {
         beverageCost = 1;
@@ -76,5 +77,26 @@ public class App {
     System.out.println("___________________________________");
 
 
+    System.out.println("Finally, what type of entertainment would you like at your event?");
+
+    String entertainmentChoice = "";
+    while (entertainmentCost == -1) {
+      System.out.println("POP STAR ($30,000), INDIE BAND ($2000), DJ ($500), KARAOKE ($60), or NONE");
+      entertainmentChoice = myScanner.nextLine().toUpperCase();
+      if (entertainmentChoice.equals("POP STAR")) {
+        entertainmentCost = 30000;
+      } else if (entertainmentChoice.equals("INDIE BAND")) {
+        entertainmentCost = 2000;
+      } else if (entertainmentChoice.equals("DJ")) {
+        entertainmentCost = 500;
+      } else if (entertainmentChoice.equals("KARAOKE")) {
+        entertainmentCost = 60;
+      } else if (entertainmentChoice.equals("NONE")) {
+        entertainmentCost = 0;
+      }
+    }
+    System.out.println("___________________________________");
+    System.out.println("You choose " + entertainmentChoice + " as your entertainment option.");
+    System.out.println("___________________________________");
   }
 }
