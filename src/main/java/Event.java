@@ -28,6 +28,9 @@ class Event {
     } else if (couponCodeString.equals("freedrinks")) {
       mBeverageCost = 0;
       newPrice = calculatePrice();
+    } else if (couponCodeString.equals("halfprice")) {
+      float priceFloat = originalPrice;
+      newPrice = Math.round(priceFloat / 2);
     } else {
       newPrice = originalPrice;
     }

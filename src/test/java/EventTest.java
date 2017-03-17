@@ -44,4 +44,10 @@ public class EventTest {
     Event testEvent = new Event(100, 1, 2, 0);
     assertEquals(500, testEvent.applyCoupon(testEvent.calculatePrice(), "freedrinks"));
   }
+
+  @Test
+  public void applyCoupon_appliesCouponHalfOffAndRounds_13() {
+    Event testEvent = new Event(5, 1, 0, 0); // cost is 25 before coupon
+    assertEquals(13, testEvent.applyCoupon(testEvent.calculatePrice(), "halfprice"));
+  }
 }
